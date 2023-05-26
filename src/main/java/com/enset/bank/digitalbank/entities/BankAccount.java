@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class   BankAccount {
     @Id
     private String id;
@@ -20,5 +20,7 @@ public abstract class   BankAccount {
     private String currency;
     @ManyToOne
     private Customer customer;
+    @OneToMany
+    private List<Operation> operations;
 
 }
