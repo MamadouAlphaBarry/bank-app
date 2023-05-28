@@ -2,6 +2,6 @@ package com.enset.bank.digitalbank.enums;
 
 
 
-public enum OPerationType {
+public enum OperationType {
     CREDIT, DEBIT
 }

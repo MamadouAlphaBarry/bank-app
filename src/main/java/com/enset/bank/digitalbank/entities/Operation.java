@@ -1,6 +1,6 @@
 package com.enset.bank.digitalbank.entities;
 
-import com.enset.bank.digitalbank.enums.OPerationType;
+import com.enset.bank.digitalbank.enums.OperationType;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,7 +16,7 @@ public class Operation {
     private Date date;
     private double amount;
     @Enumerated(EnumType.STRING)
-    private OPerationType type;
+    private OperationType type;
     @ManyToOne
     private BankAccount account;
 }
