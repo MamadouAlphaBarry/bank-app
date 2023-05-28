@@ -1,8 +1,6 @@
 package com.enset.bank.digitalbank.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
@@ -11,9 +9,10 @@ import java.util.List;
 @Data
 public class Customer {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
     private  String email;
-    @OneToMany
+    @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY)
      private List<BankAccount> accounts;
 }

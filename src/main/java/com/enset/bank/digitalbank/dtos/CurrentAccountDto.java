@@ -19,7 +19,7 @@ public class CurrentAccountDto extends BankAccountDto {
     private  double balance;
     private AccountStatus status;
     private String currency;
-    private Customer customer;
+    private CustomerDto customerDto;
     private double interestRate;
     private double overdraft;
 }

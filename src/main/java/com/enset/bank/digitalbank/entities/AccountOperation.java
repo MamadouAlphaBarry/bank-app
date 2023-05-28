@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Data
 
-public class Operation {
+public class AccountOperation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
@@ -19,4 +19,5 @@ public class Operation {
     private OperationType type;
     @ManyToOne
     private BankAccount account;
+    private String description;
 }
