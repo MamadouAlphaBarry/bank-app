@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @Slf4j
+@CrossOrigin("*")
 public class CustomerRestController {
     private BankAccountService bankservice;
     private CustomerService customerService;
@@ -43,5 +44,10 @@ public class CustomerRestController {
     public String  deleteCustomer(Long id) throws CustomerNotFoundException {
        customerService.deleteCustomer(id);
        return "Le customer a ete supprimer";
+    }
+
+   @GetMapping("api/customers/search")
+    public  List<CustomerDto> findCustomers(@RequestParam(name = "name",value = "") String keyword){
+       return customerService.searchCustomers(keyword);
     }
 }
